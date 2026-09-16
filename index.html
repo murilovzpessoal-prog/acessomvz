@@ -44,25 +44,25 @@
   <div class="fixed bottom-0 right-[-10%] w-[500px] h-[500px] pointer-events-none -z-10 opacity-15 blur-[160px]" style="background: radial-gradient(circle, #00e5ff 0%, transparent 70%);"></div>
 
   <!-- HEADER -->
-  <header class="fixed top-0 inset-x-0 z-50 flex justify-center px-4 py-4 md:py-6">
-    <div class="w-full max-w-5xl bg-[#0a0a0e]/85 backdrop-blur-xl border border-white/10 rounded-2xl px-5 md:px-8 h-14 md:h-16 flex items-center justify-between shadow-[0_10px_35px_rgba(0,0,0,0.7)]">
+  <header class="fixed top-0 inset-x-0 z-50 flex justify-center px-3 sm:px-4 py-3 sm:py-5">
+    <div class="w-full max-w-5xl bg-[#0a0a0e]/85 backdrop-blur-xl border border-white/10 rounded-2xl px-4 sm:px-8 h-14 sm:h-16 flex items-center justify-between shadow-[0_10px_35px_rgba(0,0,0,0.7)]">
       
-      <!-- Logo PNG oficial -->
-      <div class="flex items-center gap-3">
-        <img src="https://i.imgur.com/Hx7t3PI.png" alt="Comunidade MVZ" class="h-7 md:h-8 w-auto object-contain">
-        <div class="h-4 w-px bg-white/15 mx-1 hidden sm:block"></div>
-        <span class="text-[11px] text-white/50 tracking-wider uppercase font-semibold hidden sm:inline">
+      <!-- Logo PNG oficial com Portal do Aluno sempre visível (mobile e desktop) -->
+      <div class="flex items-center gap-2.5 sm:gap-3">
+        <img src="https://i.imgur.com/Hx7t3PI.png" alt="Comunidade MVZ" class="h-6 sm:h-8 w-auto object-contain">
+        <div class="h-3.5 sm:h-4 w-px bg-white/20"></div>
+        <span class="text-[10px] sm:text-[11px] text-white/70 tracking-wider uppercase font-semibold">
           Portal do Aluno
         </span>
       </div>
 
-      <div class="flex items-center gap-3 md:gap-4">
+      <div class="flex items-center gap-2.5 sm:gap-4">
         <div class="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
           <span>Acesso Liberado</span>
         </div>
 
-        <a href="https://mvzclass.com.br/login" target="_blank" rel="noopener noreferrer" class="px-5 py-2 rounded-xl bg-white text-black font-bold text-xs md:text-sm hover:bg-neutral-200 active:scale-95 transition-all shadow-md flex items-center gap-1.5">
+        <a href="https://mvzclass.com.br/login" target="_blank" rel="noopener noreferrer" class="px-4 sm:px-5 py-1.5 sm:py-2 rounded-xl bg-white text-black font-bold text-xs sm:text-sm hover:bg-neutral-200 active:scale-95 transition-all shadow-md flex items-center gap-1.5">
           <span>Entrar</span>
           <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
         </a>
@@ -71,7 +71,7 @@
   </header>
 
   <!-- MAIN -->
-  <main class="relative z-10 pt-28 md:pt-36 pb-20 px-4 max-w-5xl mx-auto">
+  <main class="relative z-10 pt-24 sm:pt-36 pb-20 px-4 max-w-5xl mx-auto">
     
     <!-- HERO TITLE -->
     <div class="text-center space-y-4 mb-8 md:mb-12">
@@ -104,7 +104,7 @@
             <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
             <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
             <span class="w-2.5 h-2.5 rounded-full bg-white/20"></span>
-            <span class="ml-2 font-medium text-[11px] text-white/60 hidden sm:inline">Vídeo de Integração Oficial</span>
+            <span class="ml-2 font-medium text-[11px] text-white/60">Vídeo de Integração Oficial</span>
           </div>
 
           <div class="flex items-center gap-1.5 bg-white/5 p-1 rounded-lg border border-white/10">
@@ -118,7 +118,7 @@
 
         <!-- Video Player HLS Nativo -->
         <div id="playerWrapper" class="relative w-full aspect-video rounded-xl overflow-hidden bg-[#050505] flex items-center justify-center group shadow-inner select-none">
-          <video id="vslVideo" class="w-full h-full object-contain cursor-pointer" playsinline preload="auto"></video>
+          <video id="vslVideo" class="w-full h-full object-contain cursor-pointer" playsinline webkit-playsinline preload="auto"></video>
 
           <!-- Custom Controls (Barra visual sem permissão de seek/avanço) -->
           <div id="customControls" class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent p-3 sm:p-4 transition-opacity duration-300 opacity-0 pointer-events-none">
@@ -138,7 +138,7 @@
                 </button>
               </div>
 
-              <button onclick="toggleFullscreen()" class="text-white/80 hover:text-white transition-colors p-1">
+              <button onclick="toggleFullscreen()" class="text-white/80 hover:text-white transition-colors p-1 cursor-pointer active:scale-95" aria-label="Tela cheia">
                 <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>
               </button>
             </div>
@@ -340,10 +340,28 @@
 
     function toggleFullscreen() {
       const wrap = document.getElementById('playerWrapper');
-      if (!document.fullscreenElement) {
-        wrap.requestFullscreen();
+
+      // Suporte iOS (iPhone/iPad Safari)
+      if (video.webkitEnterFullscreen) {
+        video.webkitEnterFullscreen();
+        return;
+      }
+      
+      // Suporte Android e Desktop
+      if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        if (wrap.requestFullscreen) {
+          wrap.requestFullscreen();
+        } else if (wrap.webkitRequestFullscreen) {
+          wrap.webkitRequestFullscreen();
+        } else if (video.requestFullscreen) {
+          video.requestFullscreen();
+        }
       } else {
-        document.exitFullscreen();
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        }
       }
     }
   </script>
